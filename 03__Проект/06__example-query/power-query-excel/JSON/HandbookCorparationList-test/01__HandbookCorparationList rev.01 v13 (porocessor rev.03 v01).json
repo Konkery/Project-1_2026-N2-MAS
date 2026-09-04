@@ -1,0 +1,10 @@
+{
+  "TabCorparationList": {
+    "1": {
+          "RemoveXorColumn": [
+                            "IDnum",
+                            "CORPORATION"
+          ]
+    }
+  }
+}

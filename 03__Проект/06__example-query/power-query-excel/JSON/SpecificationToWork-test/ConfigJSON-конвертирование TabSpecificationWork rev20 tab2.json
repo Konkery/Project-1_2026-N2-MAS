@@ -1,0 +1,59 @@
+{
+    "TabSpecificationWork": {
+        "1": {
+                "RenameColumn": [
+                        {"КОЭФФИЦИЕНТ НАЦЕНКИ":"COEFFICIENT MARKUP"},
+                        {"ЦЕНА ЗА ЕД. $РЕАЛИЗАЦИЯ":"PRICE UNIT $SALE"},
+                        {"СТОИМОСТЬ $РЕАЛИЗАЦИЯ":"COST DEAL $SALE"},
+                        {"ЦЕНА ЗА ЕД. $ИТОГ":"PRICE UNIT $TOTAL"},
+                        {"СТОИМОСТЬ $ИТОГ":"COST $TOTAL"}
+                ]
+        },
+        "2": {
+                "InsertColumn": [
+                        "HASH COLLECTION",
+                        "DISCOUNT PERCENT",
+                        "DISCOUNT MONEY",
+                        "FORMULA SPECIFIC COST",
+                        "DURATION SALE $TOTAL",
+                        "isSUPPLIED",
+                        "isPROCESSING",
+                        "COMMENT CUSTOMER"
+                ]
+        },
+        "3": {
+                "ReorderColumn": [
+                        "HASH COLLECTION",
+                        "COEFFICIENT MARKUP",
+                        "PRICE UNIT $SALE",
+                        "COST DEAL $SALE",
+                        "DISCOUNT PERCENT",
+                        "DISCOUNT MONEY",
+                        "FORMULA SPECIFIC COST",
+                        "PRICE UNIT $TOTAL",
+                        "COST $TOTAL",
+                        "DURATION SALE $TOTAL",
+                        "isSUPPLIED",
+                        "isPROCESSING",
+                        "COMMENT CUSTOMER"
+                ]
+        },
+        "4": {
+                "RemoveXorColumn": [
+                        "HASH COLLECTION",
+                        "COEFFICIENT MARKUP",
+                        "PRICE UNIT $SALE",
+                        "COST DEAL $SALE",
+                        "DISCOUNT PERCENT",
+                        "DISCOUNT MONEY",
+                        "FORMULA SPECIFIC COST",
+                        "PRICE UNIT $TOTAL",
+                        "COST $TOTAL",
+                        "DURATION SALE $TOTAL",
+                        "isSUPPLIED",
+                        "isPROCESSING",
+                        "COMMENT CUSTOMER"
+                ]
+        }
+    }
+}

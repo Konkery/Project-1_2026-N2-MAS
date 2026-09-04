@@ -1,0 +1,15 @@
+{
+	"TabEmployeeList": {
+							"ColumnFilterUniqueData":[
+														"WORK CONTRACT"
+							],
+							"ColumnFilterFreeData":[
+														{
+															"WORKER CURRENT": "true"
+														},
+														{
+															"FREELANCE OR STAFF": "staff"
+														}
+							]
+	}
+}

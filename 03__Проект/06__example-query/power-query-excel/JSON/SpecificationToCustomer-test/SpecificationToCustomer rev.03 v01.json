@@ -1,0 +1,38 @@
+{
+    "TabSpecificationWork": {
+        "1":{
+                "RemoveXorColumn": [
+                                    "IDnum",
+                                    "NAME PRODUCT",
+                                    "DESCRIPTION PRODUCT",
+                                    "QUANTITY TOTAL",
+                                    "UNITS",
+                                    "PRICE UNIT $TOTAL",
+                                    "COST $TOTAL",
+                                    "COMMENT CUSTOMER"
+                                    
+                
+                ],
+                "RenameColumn": [
+                                    { "IDnum":              "№ п/п" },
+                                    { "NAME PRODUCT":       "НАИМЕНОВАНИЕ" },
+                                    { "QUANTITY TOTAL":     "КОЛИЧЕСТВО" },
+                                    { "UNITS":              "ЕД ИЗМ" },
+                                    { "PRICE UNIT $TOTAL":  "ЦЕНА ЗА ЕД." },
+                                    { "COST $TOTAL":        "СТОИМОСТЬ" },
+                                    { "COMMENT CUSTOMER":   "ПРИМЕЧАНИЕ" }
+                ]
+        },
+            "2": {
+                "ColumnSetType": [
+                                    { "№ п/п":          "int" },
+                                    { "НАИМЕНОВАНИЕ":   "text" },
+                                    { "КОЛИЧЕСТВО":     "int" },
+                                    { "ЕД ИЗМ":         "text" },
+                                    { "ЦЕНА ЗА ЕД.":    "float" },
+                                    { "СТОИМОСТЬ":      "float" },
+                                    { "ПРИМЕЧАНИЕ":     "text" }
+                ]
+            }
+    }
+}

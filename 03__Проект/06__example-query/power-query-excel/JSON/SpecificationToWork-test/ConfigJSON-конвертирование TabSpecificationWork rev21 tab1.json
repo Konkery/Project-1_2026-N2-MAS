@@ -1,0 +1,104 @@
+{
+    "TabSpecificationWork": {
+        "1": {
+                "RenameColumn": [
+                        {"№ п/п":                        "IDnum"},
+                        {"№ ИСХ":                        "IDsource"},
+                        {"№ КОМПЛЕКТА":                  "IDset"},
+                        {"№ ПОРЯДКОВЫЙ В КОМПЛЕКТЕ":     "NUM SEQUENCE SET"},
+                        {"№ ПОЛНЫЙ":                     "NUM FULL SET"},
+                        {"ОПИСАНИЕ КОМПЛЕКТА":           "DESCRIPTION SET"},
+                        {"НАИМЕНОВАНИЕ":                 "NAME PRODUCT"},
+                        {"ОПИСАНИЕ/ХАРАКТЕРИСТИКИ":      "DESCRIPTION PRODUCT"},
+                        {"ПОСТАВЩИК":                    "SUPPLIER"},
+                        {"АРТИКУЛ ПОСТАВЩИК":            "ARTICLE SUPPLIER"},
+                        {"АРТИКУЛ МАС":                  "ARTICLE INTERNAL"},
+                        {"ЕД ИЗМ":                       "UNITS"},
+                        {"КОЛИЧЕСТВО В КОМПЛЕКТЕ":       "QUANTITY SET"},
+                        {"КОМПЛЕКТОВ В ПОСТАВКЕ":        "QUANTITY SHIPPED SET"},
+                        {"КОЛИЧЕСТВО ИТОГО":             "QUANTITY TOTAL"},
+                        {"КОЛИЧЕСТВО У ПОСТАВ-КА":       "QUANTITY SUPPLIER"},
+                        {"ЦЕНА ЗА ЕД. $ЗАКУП":           "PRICE UNIT $PURCHASE"},
+                        {"СЕБЕСТОИМОСТЬ $ЗАКУП":         "COST PRICE $PURCHASE"},
+                        {"ПРИМЕЧАНИЕ":                   "COMMENT WORK"},
+                        {"ССЫЛКА":                       "URL PRODUCT"},
+                        {"ИЗОБРАЖЕНИЕ ТМЦ":              "IMAGE PRODUCT"}
+                ]
+        },
+        "2": {
+                "InsertColumn": [
+                        "NUM PROJECT",
+                        "NUM ORDER",
+                        "VER COLLECTION",
+                        "isSHIPPED",
+                        "HASH COLLECTION",
+                        "BRAND",
+                        "TCP SOURCE"
+                ]
+        },
+        "3": {
+                "ReorderColumn": [
+                        "IDnum",
+                        "IDsource",
+                        "NUM PROJECT",
+                        "NUM ORDER",
+                        "VER COLLECTION",
+                        "DESCRIPTION SET",
+                        "IDset",
+                        "NUM SEQUENCE SET",
+                        "NUM FULL SET",
+                        "isSHIPPED",
+                        "HASH COLLECTION",
+                        "NAME PRODUCT",
+                        "DESCRIPTION PRODUCT",
+                        "BRAND",
+                        "SUPPLIER",
+                        "ARTICLE SUPPLIER",
+                        "ARTICLE INTERNAL",
+                        "UNITS",
+                        "QUANTITY SET",
+                        "QUANTITY SHIPPED SET",
+                        "QUANTITY TOTAL",
+                        "QUANTITY SUPPLIER",
+                        "PRICE UNIT $PURCHASE",
+                        "COST PRICE $PURCHASE",
+                        "TCP SOURCE",
+                        "COMMENT WORK",
+                        "URL PRODUCT",
+                        "IMAGE PRODUCT"
+                ]
+        },
+        "4": {
+                "RemoveXorColumn": [
+                        "IDnum",
+                        "IDsource",
+                        "NUM PROJECT",
+                        "NUM ORDER",
+                        "VER COLLECTION",
+                        "DESCRIPTION SET",
+                        "IDset",
+                        "NUM SEQUENCE SET",
+                        "NUM FULL SET",
+                        "isSHIPPED",
+                        "HASH COLLECTION",
+                        "NAME PRODUCT",
+                        "DESCRIPTION PRODUCT",
+                        "BRAND",
+                        "SUPPLIER",
+                        "ARTICLE SUPPLIER",
+                        "ARTICLE INTERNAL",
+                        "UNITS",
+                        "QUANTITY SET",
+                        "QUANTITY SHIPPED SET",
+                        "QUANTITY TOTAL",
+                        "QUANTITY SUPPLIER",
+                        "PRICE UNIT $PURCHASE",
+                        "COST PRICE $PURCHASE",
+                        "TCP SOURCE",
+                        "COMMENT WORK",
+                        "URL PRODUCT",
+                        "IMAGE PRODUCT"
+                ]
+        }
+    }
+}

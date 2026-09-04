@@ -1,0 +1,27 @@
+{
+	"TabEmployeeList": {
+							"ColumnFilterUniqueData":[
+														"WORK CONTRACT"
+							],
+							"ColumnFilterFreeData":[
+														{
+															"WORKER CURRENT": "true"
+														},
+														{
+															"FREELANCE OR STAFF": "staff"
+														}
+							],
+							"InsertColumn": [
+														"COMMENT 1",
+														"COMMENT 2"
+							],
+							"ColumnFillData": [
+														{
+															"COMMENT 1": "Good employee!"
+														},
+														{
+															"COMMENT 2": "An interesting employee!"
+														}
+							]
+	}
+}

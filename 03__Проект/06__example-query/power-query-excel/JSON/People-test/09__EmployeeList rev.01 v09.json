@@ -1,0 +1,68 @@
+{
+	"TabEmployeeList": {
+							"ColumnFilterUniqueData":[
+														"WORK CONTRACT"
+							],
+							"ColumnFilterFreeData":[
+														{
+															"WORKER CURRENT": "true"
+														},
+														{
+															"FREELANCE OR STAFF": "staff"
+														}
+							],
+							"InsertColumn": [
+														"COMMENT 1",
+														"COMMENT 2"
+							],
+							"ColumnFillData": [
+														{
+															"COMMENT 1": "Good employee!"
+														},
+														{
+															"COMMENT 2": "An interesting employee!"
+														}
+							],
+							"ModifyData":	[
+												{
+													"data_1": {
+																"IndexSearchColumn": "WORK CONTRACT",
+																"IndexSearchRow":	 "Teacher 1 category",
+																"NewData":	{
+																				"WORK CONTRACT": "Human"
+																}
+													}
+												}
+							],
+							"RemoveRow": [
+								{
+									"row_1": {
+												"IndexSearchColumn": "FULL NAME",
+												"IndexSearchRow": "Гатауллина О.С."
+									}
+								}
+							],
+							"RemoveXorColumn": [
+													"IDnum",
+													"COUNTERPARTY",
+													"LAST NAME",
+													"FIRST NAME",
+													"PATRONYMIC",
+													"FULL NAME",
+													"FREELANCE OR STAFF",
+													"POST MAS",
+													"WORK CONTRACT",
+													"BUSINESS MAIL",
+													"WORKER CURRENT",
+													"TRASH"
+							],
+							"RemoveColumn": [
+													"LAST NAME",
+													"FIRST NAME",
+													"PATRONYMIC"
+							],
+							"ClearColumn": [
+												"TRASH"
+							]
+	}
+}

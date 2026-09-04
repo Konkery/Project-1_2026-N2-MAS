@@ -1,0 +1,201 @@
+{
+  "TabEmployeeList": {
+    "1": {
+      "ColumnFilterFreeData": [
+        {
+          "WORKER CURRENT": "true"
+        },
+        {
+          "FREELANCE OR STAFF": "staff"
+        }
+      ],
+      "ColumnFilterUniqueData": [
+        "WORK CONTRACT"
+      ],
+      "InsertColumn": [
+        "COMMENT 1",
+        "COMMENT 2"
+      ],
+      "ColumnFillData": [
+                          {
+                            "COMMENT 1": "Good employee!"
+                          },
+                          {
+                            "COMMENT 2": "An interesting employee!"
+                          }
+      ],
+      "ModifyData": [
+        {
+          "data_1": {
+            "IndexSearchColumn": "WORK CONTRACT",
+            "IndexSearchRow": "Teacher 1 category",
+            "NewData":  {
+                        "WORK CONTRACT": "Human"
+                        }
+          }
+        }
+      ],
+      "RemoveRow": [
+        {
+          "row_1": {
+            "IndexSearchColumn": "FULL NAME",
+            "IndexSearchRow": "Гатауллина О.С."
+          }
+        }
+      ]
+    },
+    "2": {
+      "RemoveXorColumn": [
+        "IDnum",
+        "COUNTERPARTY",
+        "LAST NAME",
+        "FIRST NAME",
+        "PATRONYMIC",
+        "FULL NAME",
+        "FREELANCE OR STAFF",
+        "POST",
+        "WORK CONTRACT",
+        "BUSINESS MAIL",
+        "WORKER CURRENT",
+        "TRASH"
+      ],
+      "RemoveColumn": [
+        "LAST NAME",
+        "FIRST NAME",
+        "PATRONYMIC"
+      ],
+      "ClearColumn": [
+        "TRASH"
+      ],
+      "RenameColumn": [
+        {
+          "FULL NAME": "ФИО"
+        },
+        {
+          "TRASH": "МУСОР"
+        }
+      ],
+      "ReorderColumn": [
+        "IDnum",
+        "COUNTERPARTY",
+        "ФИО",
+        "POST",
+        "WORK CONTRACT",
+        "WORKER CURRENT",
+        "FREELANCE OR STAFF",
+        "BUSINESS MAIL",
+        "МУСОР"
+      ]
+    },
+    "3": {
+      "ColumnSetType": [
+        {
+          "IDnum": "int"
+        },
+        {
+          "COUNTERPARTY": "text"
+        },
+        {
+          "ФИО": "text"
+        },
+        {
+          "POST": "text"
+        },
+        {
+          "WORK CONTRACT": "text"
+        },
+        {
+          "WORKER CURRENT": "text"
+        },
+        {
+          "FREELANCE OR STAFF": "text"
+        },
+        {
+          "BUSINESS MAIL": "text"
+        },
+        {
+          "МУСОР": "text"
+        }
+      ],
+      "ValidationData": [
+        {
+          "IDnum": {
+            "fvCheckID": []
+          }
+        },
+        {
+          "COUNTERPARTY": {
+            "fvCheckNonEmpty": [],
+            "fvCheckTextLength": [
+              5,
+              30
+            ]
+          }
+        },
+        {
+          "ФИО": {
+            "fvCheckNonEmpty": [],
+            "fvCheckTextLength": [
+              5,
+              30
+            ]
+          }
+        },
+        {
+          "POST MAS": {
+            "fvCheckNonEmpty": [],
+            "fvCheckTextLength": [
+              5,
+              30
+            ]
+          }
+        },
+        {
+          "WORK CONTRACT": {
+            "fvCheckNonEmpty": [],
+            "fvCheckTextLength": [
+              5,
+              30
+            ]
+          }
+        },
+        {
+          "WORKER CURREN": {
+            "fvCheckNonEmpty": [],
+            "fvCheckTextLength": [
+              5,
+              30
+            ]
+          }
+        },
+        {
+          "FREELANCE OR STAFF": {
+            "fvCheckNonEmpty": [],
+            "fvCheckTextLength": [
+              5,
+              30
+            ]
+          }
+        },
+        {
+          "BUSINESS MAIL": {
+            "fvCheckNonEmpty": [],
+            "fvCheckTextLength": [
+              5,
+              30
+            ]
+          }
+        },
+        {
+          "МУСОР": {
+            "fvCheckNonEmpty": [],
+            "fvCheckTextLength": [
+              5,
+              30
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

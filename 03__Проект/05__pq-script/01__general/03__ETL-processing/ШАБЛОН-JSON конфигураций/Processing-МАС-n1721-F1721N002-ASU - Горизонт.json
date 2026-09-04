@@ -1,0 +1,132 @@
+{
+	"TabSpecificationWork": {
+								"RemoveColumn": [
+													"№ ИСХ",
+													"№ ПОРЯДКОВЫЙ В КОМПЛЕКТЕ",
+													"On-Off",
+													"БРЕНД",
+													"АРТИКУЛ МАС",
+													"ПОСТАВЩИК",
+													"АРТИКУЛ ПОСТАВЩИК",
+													"ПРИЗНАК ПОСТ ОБРАБОТКИ",
+													"КОЛИЧЕСТВО В КОМПЛЕКТЕ",
+													"КОМПЛЕКТОВ В ПОСТАВКЕ",
+													"КОЛИЧЕСТВО У ПОСТАВ-КА",
+													"ЦЕНА ЗА ЕД. $ЗАКУП",
+													"СЕБЕСТОИМОСТЬ $ЗАКУП",
+													"КОЭФФИЦИЕНТ НАЦЕНКИ",
+													"ЦЕНА ЗА ЕД. $РЕАЛИЗАЦИЯ",
+													"СТОИМОСТЬ $РЕАЛИЗАЦИЯ",
+													"ТРЕБОВАНИЯ ИСХОДНЫЕ",
+													"ИЗОБРАЖЕНИЕ ТМЦ",
+													"ССЫЛКА",
+													"ПРИМЕЧАНИЕ"
+								],
+								"RenameColumn": [
+													{
+														"КОЛИЧЕСТВО ИТОГО": "КОЛИЧЕСТВО"
+													},
+													{
+														"ЦЕНА ЗА ЕД. $ИТОГ": "ЦЕНА ЗА ЕД."
+													},
+													{
+														"СТОИМОСТЬ $ИТОГ": "СТОИМОСТЬ"
+													},
+													{
+														"СРОК ПОСТАВКИ $ИТОГ": "ДЛИТЕЛЬНОСТЬ ПОСТАВКИ ДНЕЙ"
+													}
+								],
+								"ReorderColumn": [
+													"№ п/п",
+													"№ КОМПЛЕКТА",
+													"№ ПОЛНЫЙ",
+													"ОПИСАНИЕ КОМПЛЕКТА",
+													"НАИМЕНОВАНИЕ",
+													"ОПИСАНИЕ/ХАРАКТЕРИСТИКИ",
+													"КОЛИЧЕСТВО",
+													"ЕД ИЗМ",
+													"ЦЕНА ЗА ЕД.",
+													"СТОИМОСТЬ",
+													"ДЛИТЕЛЬНОСТЬ ПОСТАВКИ ДНЕЙ"
+								],
+								"ValidationData": [
+													{
+														"№ п/п": 					{
+																						"fvCheckNonEmpty": [],
+																						"typeColumn": "int"
+																					}
+													},
+													{
+														"№ КОМПЛЕКТА": 					{
+																						"fvCheckNonEmpty": [],
+																						"typeColumn": "int"
+																					}
+													},
+													{
+														"№ ПОЛНЫЙ": 				{
+																						"fvCheckNonEmpty": [],
+																						"fvCheckTextLength": [3, 4],
+																						"typeColumn": "text"
+																					}
+													},
+													{
+														"ОПИСАНИЕ КОМПЛЕКТА": 		{
+																						"fvCheckNonEmpty": [],
+																						"fvCheckTextLength": [3, 80],
+																						"typeColumn": "text"
+																					}
+													},
+													{
+														"НАИМЕНОВАНИЕ": 			{
+																						"fvCheckNonEmpty": [],
+																						"fvCheckTextLength": [5, 200],
+																						"typeColumn": "text"
+																					}
+													},
+													{
+														"ОПИСАНИЕ/ХАРАКТЕРИСТИКИ": {
+																						"fvCheckNonEmpty": [],
+																						"fvCheckTextLength": [5, 3000],
+																						"typeColumn": "text"
+																					}
+													},
+													{
+														"КОЛИЧЕСТВО":				{
+																						"fvCheckNonEmpty": [],
+																						"fvCheckIntegerRange": [1, 30],
+																						"typeColumn": "int"
+																					}
+													},
+													{
+														"ЕД ИЗМ":					{
+																						"fvCheckNonEmpty": [],
+																						"fvCheckTextLength": [1, 4],
+																						"typeColumn": "text"
+																					}
+													},
+													{
+														"ЦЕНА ЗА ЕД.": 				{
+																						"fvCheckNonEmpty": [],
+																						"fvCheckFloat": [],
+																						"fvCheckFloatRange": [1, 5000000],
+																						"typeColumn": "float"
+																					}
+													},
+													{
+														"СТОИМОСТЬ": 				{
+																						"fvCheckNonEmpty": [],
+																						"fvCheckFloat": [],
+																						"fvCheckFloatRange": [1.5, 5000000.0],
+																						"typeColumn": "float"
+																					}
+													},
+													{
+														"ДЛИТЕЛЬНОСТЬ ПОСТАВКИ ДНЕЙ": 	{
+																						"fvCheckNonEmpty": [],
+																						"typeColumn": "int"
+																						}
+													}
+
+								]
+							}
+}

@@ -1,0 +1,28 @@
+{
+	"TabEmployeeList": {
+							"ColumnFilterUniqueData":[
+														"FULL NAME LONG"
+							],
+							"ColumnFilterFreeData":[
+														{
+															"COUNTERPARTY": "Горизонт"
+														}
+							]
+,							"RemoveXorColumn": [
+													"IDnum",
+													"FULL NAME LONG",
+													"POST"
+							],
+							"ColumnSetType": [
+								{
+									"IDnum": "int"
+								},
+								{
+									"FULL NAME LONG": "text"
+								},
+								{
+									"POST": "text"
+								}
+							]
+	}
+}

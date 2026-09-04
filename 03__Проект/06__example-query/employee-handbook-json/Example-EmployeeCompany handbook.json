@@ -1,0 +1,132 @@
+{
+	"TabEmployeeList": {
+							"ColumnFilterUniqueData":[
+														"FULL NAME"
+							],
+							"RemoveXorColumn": [
+												"IDnum",
+												"COUNTERPARTY",
+												"LAST NAME",
+												"FIRST NAME",
+												"PATRONYMIC",
+												"FULL NAME",
+												"FREELANCE OR STAFF",
+												"POST MAS",
+												"WORK CONTRACT",
+												"BUSINESS MAIL",
+												"WORKER CURRENT",
+												"TRASH"
+							],
+							"ColumnSetType": [
+								{
+									"IDnum": "int"
+								},
+								{
+									"COUNTERPARTY": "text"
+								},
+								{
+									"LAST NAME": "text"
+								},
+								{
+									"FIRST NAME": "text"
+								},
+								{
+									"PATRONYMIC": "text"
+								},
+								{
+									"FULL NAME": "text"
+								},
+								{
+									"FREELANCE OR STAFF": "text"
+								},
+								{
+									"POST MAS": "text"
+								},
+								{
+									"WORK CONTRACT": "text"
+								},
+								{
+									"BUSINESS MAIL": "text"
+								},
+								{
+									"WORKER CURRENT": "text"
+								},								
+								{
+									"TRASH": "text"
+								}
+							],
+							"ValidationData": [
+												{
+													"IDnum": {
+																"fvCheckID": []
+													}
+												},
+												{
+													"COUNTERPARTY": {
+																"fvCheckNonEmpty": [],
+																"fvCheckTextLength": [5, 30]
+													}
+												},
+												{
+													"LAST NAME": {
+															"fvCheckNonEmpty": [],
+															"fvCheckTextLength": [5, 30]
+															}
+												},
+												{
+													"FIRST NAME": {
+															"fvCheckNonEmpty": [],
+															"fvCheckTextLength": [5, 30]
+															}
+												},
+												{
+													"PATRONYMIC": {
+															"fvCheckNonEmpty": [],
+															"fvCheckTextLength": [5, 30]
+															}
+												},
+												{
+													"FULL NAME": {
+															"fvCheckNonEmpty": [],
+															"fvCheckTextLength": [5, 30]
+															}
+												},
+												{
+													"FREELANCE OR STAFF": {
+														"fvCheckNonEmpty": [],
+														"fvCheckTextLength": [5, 30]
+													}
+												},
+												{
+													"POST MAS": {
+														"fvCheckNonEmpty": [],
+														"fvCheckTextLength": [5, 30]
+													}
+												},
+												{
+													"WORK CONTRACT": {
+														"fvCheckNonEmpty": [],
+														"fvCheckTextLength": [5, 30]
+													}
+												},
+												{
+													"BUSINESS MAIL": {
+														"fvCheckNonEmpty": [],
+														"fvCheckTextLength": [5, 30]
+													}
+												},
+												{
+													"WORKER CURREN": {
+														"fvCheckNonEmpty": [],
+														"fvCheckTextLength": [5, 30]
+													}
+												},										
+												{
+													"TRASH": {
+														"fvCheckNonEmpty": [],
+														"fvCheckTextLength": [5, 30]
+													}
+												}
+							]
+	}
+}

@@ -1,0 +1,93 @@
+{
+    "TabSpecificationWork": {
+            "1":{
+                    "ColumnFilterFreeData": [
+                        { "NUM PROJECT": "1/2024-N4-ГОРИЗОНТ" }
+                    ]
+
+            },
+            "2": {
+                    "ModifyData":   [
+                                        {
+                                            "data_1": {
+                                                "IndexSearchColumn": "HASH COLLECTION",
+                                                "IndexSearchRow": "1/2024-n4-горизонт-ver_3-set_3.1-true",
+                                                "OldData": {
+                                                    "QUANTITY TOTAL":       22,
+                                                    "PRICE UNIT $TOTAL":    830.25,
+                                                    "COST $TOTAL":          18265.50
+                                                },
+                                                "NewData": {
+                                                    "QUANTITY TOTAL":       14,
+                                                    "COST $TOTAL":          11623.50,
+                                                    "COMMENT": "Восемь позиций остаются у нас в ЗИП"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "data_2": {
+                                                "IndexSearchColumn": "HASH COLLECTION",
+                                                "IndexSearchRow": "1/2024-n4-горизонт-ver_3-set_3.6-true",
+                                                "OldData": {
+                                                    "QUANTITY TOTAL":       20,
+                                                    "PRICE UNIT $TOTAL":    1092.15,
+                                                    "COST $TOTAL":          21843.0 
+
+                                                },
+                                                "NewData": {
+                                                    "QUANTITY TOTAL":       14,
+                                                    "COST $TOTAL":          15290.10,
+                                                    "COMMENT": "Шесть позиций остаются у нас в ЗИП"
+                                                }
+                                            }
+                                        }
+                    ]
+            },
+            "3": {
+                    "RemoveRowAll": [
+                        {
+                            "row_1": {
+                                "IndexSearchColumn": "HASH COLLECTION",
+                                "IndexSearchRow": "1/2024-n4-горизонт-ver_3-set_4.5-false"
+                            }
+                        }
+                    ]      
+            },
+            "4": {
+                    "RemoveXorColumn": [
+                                        "NUM FULL SET",
+                                        "NAME PRODUCT",
+                                        "DESCRIPTION PRODUCT",
+                                        "QUANTITY TOTAL",
+                                        "UNITS",
+                                        "PRICE UNIT $TOTAL",
+                                        "COST $TOTAL",
+                                        "COMMENT CUSTOMER"
+                ]
+            },
+            "5": {
+                    "RenameColumn": [   
+                                        { "NUM FULL SET":               "№ п/п" },
+                                        { "NAME PRODUCT":               "НАИМЕНОВАНИЕ" },
+                                        { "DESCRIPTION PRODUCT":        "ОПИСАНИЕ/ХАРАКТЕРИСТИКИ" },
+                                        { "QUANTITY TOTAL":             "КОЛИЧЕСТВО" },
+                                        { "UNITS":                      "ЕД ИЗМ" },
+                                        { "PRICE UNIT $TOTAL":          "ЦЕНА ЗА ЕД." },
+                                        { "COST $TOTAL":                "СТОИМОСТЬ" },
+                                        { "COMMENT CUSTOMER":           "ПРИМЕЧАНИЕ" }
+                ]
+            },
+            "6": {
+                    "ColumnSetType": [
+                                        { "№ п/п":                      "text" },
+                                        { "НАИМЕНОВАНИЕ":               "text" },
+                                        { "ОПИСАНИЕ/ХАРАКТЕРИСТИКИ":    "text" },
+                                        { "КОЛИЧЕСТВО":                 "int" },
+                                        { "ЕД ИЗМ":                     "text" },
+                                        { "ЦЕНА ЗА ЕД.":                "float" },
+                                        { "СТОИМОСТЬ":                  "float" },
+                                        { "ПРИМЕЧАНИЕ":                 "text" }
+                ]
+            }
+    }
+}
