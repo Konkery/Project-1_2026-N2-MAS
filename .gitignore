@@ -54,10 +54,13 @@
 *.m2ts
 
 # Optional useful ignores
+.*/
+00__raw/
+temp*/
+temp*
 .vscode/
 node_modules/
-.DS_Store
 Thumbs.db
-00__raw/
+
 
 !.gitignore
