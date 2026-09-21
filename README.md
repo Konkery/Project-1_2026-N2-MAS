@@ -28,7 +28,7 @@ flowchart TD
     classDef deriv fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px,color:#1B5E20;
     classDef lib fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px,color:#4A148C;
 
-    Master["Master Data: work_spec (тип 20)<br/>TabSpecificationWork_1 (29 колонок)<br/>+ TabSpecificationWork_2 (18 колонок)"]:::master
+    Master["Master Data: work_spec (тип 20)<br/>TabSpecificationWork_1 (30 колонок)<br/>+ TabSpecificationWork_2 (18 колонок)"]:::master
     Config["Таблица TabConfigJSON<br/>(DSL HorizonBI / МакроБлоки)"]:::master
 
     subgraph CoreEngine ["ETL-ядро экосистемы"]
@@ -168,12 +168,12 @@ c:\OneDrive\01__LLC_MAS_2025\КИТ\
 
 **Назначение:** Центральный Master Data документ — единая точка истины по всему проекту и всем входящим в него заказам.
 
-**Архитектура (Шаблон `rev.04 v02`):**
+**Архитектура (Шаблон `rev.04 v03`):**
 
 - Две связанные умные таблицы Excel (реляционная связь 1:1 по ключу `HASH COLLECTION`):
-  - **`TabSpecificationWork_1` (29 колонок):** Идентификаторы, номенклатура, количества, закупки, себестоимость БЕЗ НДС, входящий НДС на закупку (`VAT ADD PRICE $PURCHASE`), логистика, ссылки на ТКП и фото.
+  - **`TabSpecificationWork_1` (30 колонок):** Идентификаторы, номенклатура, количества, закупки, себестоимость БЕЗ НДС, входящий НДС на закупку (`VAT ADD PRICE $PURCHASE`), себестоимость закупки С НДС (`COST PRICE VAT $PURCHASE`), логистика, ссылки на ТКП и фото.
   - **`TabSpecificationWork_2` (18 колонок):** Наценки, базовая реализация, скидки, налоговый блок НДС (`VAT RATE CONTRACTOR $TOTAL`, `PRICE VAT UNIT $TOTAL`, `COST VAT $TOTAL`), статусы поставки и комментарий заказчика.
-- **`TabTableSchema` (47 записей):** Метаданные, диапазоны значений, признак обязательности (NULL), формулы и правила валидации для всех 47 столбцов спецификации.
+- **`TabTableSchema` (48 записей):** Метаданные, диапазоны значений, признак обязательности (NULL), формулы и правила валидации для всех 48 столбцов спецификации.
 
 **→ Подробная документация:** [README-work_spec.md](./03__Проект/07__template-excel/20__work_spec/README-work_spec.md)
 
@@ -308,5 +308,5 @@ flowchart LR
 
 ---
 
-**Версия документации:** 2.0 (Синхронизировано с ядром `rev.04 v01` и шаблоном `rev.04 v02`)  
-**Дата актуализации:** 14 сентября 2026 г.
+**Версия документации:** 2.1 (Синхронизировано с ядром `rev.04 v01` и шаблоном `rev.04 v03`)  
+**Дата актуализации:** 21 сентября 2026 г.
