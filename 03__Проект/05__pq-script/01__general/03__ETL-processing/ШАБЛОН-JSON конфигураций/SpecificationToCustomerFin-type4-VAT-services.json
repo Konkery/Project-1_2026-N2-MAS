@@ -1,0 +1,71 @@
+{
+  "TabSpecificationWork": {
+    "1": {
+      "RemoveXorColumn": [
+        "NUM FULL SET",
+        "NAME PRODUCT",
+        "UNITS",
+        "QUANTITY TOTAL",
+        "PRICE UNIT $TOTAL",
+        "COST $TOTAL",
+        "COST ADD VAT $TOTAL",
+        "VAT RATE CONTRACTOR $TOTAL",
+        "PRICE VAT UNIT $TOTAL",
+        "COST VAT $TOTAL",
+        "DURATION SALE $TOTAL"
+      ]
+    },
+    "2": {
+      "FinancialRound": [
+        {
+          "rule_1": {
+            "SourceQuantity": "QUANTITY TOTAL",
+            "SourceBasePrice": "PRICE UNIT $TOTAL",
+            "SourceVatRate": "VAT RATE CONTRACTOR $TOTAL",
+            "TargetPriceNoVat": "PRICE UNIT $TOTAL",
+            "TargetCostNoVat": "COST $TOTAL",
+            "TargetVatSum": "COST ADD VAT $TOTAL",
+            "TargetPriceVat": "PRICE VAT UNIT $TOTAL",
+            "TargetCostVat": "COST VAT $TOTAL"
+          }
+        }
+      ]
+    },
+    "3": {
+      "RemoveXorColumn": [
+        "NUM FULL SET",
+        "NAME PRODUCT",
+        "UNITS",
+        "QUANTITY TOTAL",
+        "PRICE UNIT $TOTAL",
+        "COST $TOTAL",
+        "COST ADD VAT $TOTAL",
+        "DURATION SALE $TOTAL"
+      ]
+    },
+    "4": {
+      "RenameColumn": [
+        { "NUM FULL SET": "№" },
+        { "NAME PRODUCT": "НАИМЕНОВАНИЕ" },
+        { "UNITS": "ЕД ИЗМ." },
+        { "QUANTITY TOTAL": "КОЛ-ВО" },
+        { "PRICE UNIT $TOTAL": "ЦЕНА БЕЗ НДС, руб" },
+        { "COST $TOTAL": "СТОИМОСТЬ БЕЗ НДС, руб" },
+        { "COST ADD VAT $TOTAL": "НДС, руб" },
+        { "DURATION SALE $TOTAL": "ДЛИТЕЛЬНОСТЬ, КАЛ. ДНЕЙ" }
+      ]
+    },
+    "5": {
+      "ColumnSetType": [
+        { "№": "text" },
+        { "НАИМЕНОВАНИЕ": "text" },
+        { "ЕД ИЗМ.": "text" },
+        { "КОЛ-ВО": "int" },
+        { "ЦЕНА БЕЗ НДС, руб": "float" },
+        { "СТОИМОСТЬ БЕЗ НДС, руб": "float" },
+        { "НДС, руб": "float" },
+        { "ДЛИТЕЛЬНОСТЬ, КАЛ. ДНЕЙ": "int" }
+      ]
+    }
+  }
+}
