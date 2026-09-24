@@ -1,6 +1,78 @@
 {
   "TabSpecificationWork": {
     "1": {
+      "ValidationData": [
+        { "StrictBlock": true },
+
+        { "IDnum": { "fvCheckID": [] } },
+        { "NUM PROJECT": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [13, 25] } },
+        { "NUM ORDER": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 100] } },
+        { "VER COLLECTION": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 50] } },
+        { "DESCRIPTION SET": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [5, 300] } },
+        { "IDset": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [1, 50] } },
+        { "NUM SEQUENCE SET": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 50] } },
+        { "NUM FULL SET": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [3, 5] } },
+        { "isSHIPPED": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [4, 5] } },
+        { "HASH COLLECTION": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [6, 10] } },
+        { "NAME PRODUCT": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [3, 300] } },
+        { "DESCRIPTION PRODUCT": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [10, 1000] } },
+        { "BRAND": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [3, 50] } },
+        { "SUPPLIER": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [3, 50] } },
+        { "ARTICLE SUPPLIER": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [3, 50] } },
+        { "ARTICLE INTERNAL": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [3, 15] } },
+        { "UNITS": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [0, 2] } },
+        { "QUANTITY SET": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 50] } },
+        { "QUANTITY SHIPPED SET": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 50] } },
+        { "QUANTITY TOTAL": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 50] } },
+        { "QUANTITY SUPPLIER": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [0, 999] } },
+        { "PRICE UNIT $PURCHASE": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 5000000] } },
+        { "VAT ADD PRICE $PURCHASE": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [0, 2000000] } },
+        { "COST PRICE $PURCHASE": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 10000000] } },
+        { "COST PRICE VAT $PURCHASE": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 10000000] } },
+        { "TCP SOURCE": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [7, 1000] } },
+        { "COMMENT WORK": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [7, 3000] } },
+        { "URL PRODUCT": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [7, 1000] } },
+
+        { "COEFFICIENT MARKUP": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 10] } },
+        { "PRICE UNIT $SALE": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 5000000] } },
+        { "COST DEAL $SALE": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 25000000] } },
+        { "DISCOUNT PERCENT": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [0, 70] } },
+        { "DISCOUNT MONEY": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 500000] } },
+        { "VAT RATE CONTRACTOR $TOTAL": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [0, 22] } },
+        { "PRICE UNIT $TOTAL": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 5000000] } },
+        { "VAT ADD PRICE UNIT $TOTAL": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [0, 2000000] } },
+        { "PRICE VAT UNIT $TOTAL": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 5000000] } },
+        { "COST $TOTAL": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 25000000] } },
+        { "COST ADD VAT $TOTAL": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 5000000] } },
+        { "COST VAT $TOTAL": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 25000000] } },
+        { "DURATION SALE $TOTAL": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 240] } },
+        { "isSUPPLIED": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [4, 5] } },
+        { "isPROCESSING": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [4, 5] } }
+      ]
+    },
+    "2": {
+      "ColumnFilterFreeData": [
+        { "NUM PROJECT": "1/2026-N2-ГОРИЗОНТ" }
+      ],
+      "RemoveRowAll": [
+        {
+          "row_1": {
+            "IndexSearchColumn": "isSHIPPED",
+            "IndexSearchRow": "false"
+          }
+        }
+      ]
+    },
+    "3": {
+      "SortData": [
+        { "NUM FULL SET": "Ascending" },
+        { "VER COLLECTION": "Descending" }
+      ],
+      "ColumnFilterUniqueData": [
+        "NUM FULL SET"
+      ]
+    },
+    "4": {
       "RemoveXorColumn": [
         "NUM FULL SET",
         "NAME PRODUCT",
@@ -13,9 +85,7 @@
         "PRICE VAT UNIT $TOTAL",
         "COST VAT $TOTAL",
         "DURATION SALE $TOTAL"
-      ]
-    },
-    "2": {
+      ],
       "FinancialRound": [
         {
           "rule_1": {
@@ -31,7 +101,7 @@
         }
       ]
     },
-    "3": {
+    "5": {
       "RemoveXorColumn": [
         "NUM FULL SET",
         "NAME PRODUCT",
@@ -41,9 +111,7 @@
         "COST $TOTAL",
         "COST ADD VAT $TOTAL",
         "DURATION SALE $TOTAL"
-      ]
-    },
-    "4": {
+      ],
       "RenameColumn": [
         { "NUM FULL SET": "№" },
         { "NAME PRODUCT": "НАИМЕНОВАНИЕ" },
@@ -55,7 +123,7 @@
         { "DURATION SALE $TOTAL": "ДЛИТЕЛЬНОСТЬ, КАЛ. ДНЕЙ" }
       ]
     },
-    "5": {
+    "6": {
       "ColumnSetType": [
         { "№": "text" },
         { "НАИМЕНОВАНИЕ": "text" },
