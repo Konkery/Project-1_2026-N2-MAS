@@ -19,7 +19,7 @@
 | Параметр                                          | Значение                                                                                                                                                          |
 | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Идентификатор компонента** | `ProcessingTable`                                                                                                                                                       |
-| **Текущая версия ядра**            | `rev.04 v02`                                                                                                                                                            |
+| **Текущая версия ядра**            | `rev.04 v03`                                                                                                                                                          |
 | **Среда выполнения**                 | Power Query Engine (Excel 2016+, Excel M365, Power BI Desktop)                                                                                                            |
 | **Язык разработки**                   | Power Query (M)                                                                                                                                                           |
 | **Язык управления (DSL)**             | `HorizonBI` (на базе JSON-конфигураторов)                                                                                                           |
@@ -41,7 +41,7 @@ flowchart TD
         TabConfig["Таблица TabConfigJSON<br/>(Колонки: IDconfig, CONFIG_JSON)"]:::storage
     end
 
-    subgraph ProcessorCore ["Ядро ETL: ProcessingTable (rev.04 v02)"]
+    subgraph ProcessorCore ["Ядро ETL: ProcessingTable (rev.04 v03)"]
         ArgResolver["1. Парсер аргументов и резолвер путей"]:::engine
         ConfigValidator["2. Ранняя валидация структуры JSON"]:::engine
         TableLoader["3. Экстрактор таблиц 1..4 (Current vs External)"]:::engine
