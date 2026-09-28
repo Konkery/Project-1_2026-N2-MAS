@@ -218,7 +218,7 @@ _(Колонки A–E листа содержат формулы `=ВЫБОРС
 |  3  | `PRICE UNIT $SALE`           | float | [1, 5000000]  |  ✅  |    🔒 **ДА**    | Базовая цена продажи за ед. БЕЗ НДС (`PURCHASE * MARKUP`)           |
 |  4  | `COST DEAL $SALE`            | float | [1, 25000000] |  ✅  |    🔒 **ДА**    | Базовая стоимость продажи БЕЗ НДС (`QUANTITY TOTAL * SALE`)         |
 |  5  | `DISCOUNT PERCENT`           | float | [0, 70]       |  ❌  |    🔒 **ДА**    | Согласованный процент коммерческой скидки                           |
-|  6  | `DISCOUNT MONEY`             | float | [1, 500000]   |  ✅  |    🔒 **ДА**    | Сумма скидки в деньгах                                              |
+|  6  | `DISCOUNT MONEY`             | float | [0, 500000]   |  ✅  |    🔒 **ДА**    | Сумма скидки в деньгах                                              |
 |  7  | `FORMULA SPECIFIC COST`      | text  | [0, 300]      |  ❌  |    🔒 **ДА**    | Формула специфического расчета бандлов (допускает NULL)             |
 |  8  | `VAT RATE CONTRACTOR $TOTAL` | float | [0, 22]       |  ✅  |       ❌        | **Ставка НДС исполнителя** (`22` для ГОРИЗОНТ; `0` для МАС/ИП)      |
 |  9  | `PRICE UNIT $TOTAL`          | float | [1, 5000000]  |  ✅  |       ❌        | **Итоговая цена за ед. БЕЗ НДС** (для договоров без НДС)            |
@@ -267,9 +267,11 @@ _Подробное описание 19 фондов КБД 1-го типа и �
 
 Таблица `TabTableSchema` позволяет генерировать блоки правил `ValidationData` для языка `HorizonBI`:
 
-- `TYPE DATASET = int` $\rightarrow$ функция `fvCheckIntegerRange_scalar` с параметрами `RANGE VALUES`.
-- `TYPE DATASET = float` $\rightarrow$ функция `fvCheckFloatRange_scalar` с параметрами `RANGE VALUES`.
-- `TYPE DATASET = text` $\rightarrow$ функция `fvCheckTextLength_scalar` с параметрами `RANGE VALUES`.
+> ⚠️ **Важно:** в JSON-конфигурации имена скалярных функций указываются **БЕЗ суффикса `_scalar`** (например, `fvCheckTextLength`, а не `fvCheckTextLength_scalar`). Движок процессора `ProcessingTable` добавляет суффикс `_scalar` автоматически. Указание суффикса вручную приводит к ошибке вызова функции (`fvCheck..._scalar_scalar`).
+
+- `TYPE DATASET = int` $\rightarrow$ функция `fvCheckIntegerRange` с параметрами `RANGE VALUES`.
+- `TYPE DATASET = float` $\rightarrow$ функция `fvCheckFloatRange` с параметрами `RANGE VALUES`.
+- `TYPE DATASET = text` $\rightarrow$ функция `fvCheckTextLength` с параметрами `RANGE VALUES`.
 - `NULL VALUE = false` $\rightarrow$ обязательное добавление правила `fvCheckNonEmpty: []`.
 
 ---

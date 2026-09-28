@@ -19,7 +19,7 @@
 | Параметр                                          | Значение                                                                                                                                                          |
 | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Идентификатор компонента** | `ProcessingTable`                                                                                                                                                       |
-| **Текущая версия ядра**            | `rev.05 v02`                                                                                                                                                            |
+| **Текущая версия ядра**            | `rev.05 v03`                                                                                                                                                            |
 | **Среда выполнения**                 | Power Query Engine (Excel 2016+, Excel M365, Power BI Desktop)                                                                                                            |
 | **Язык разработки**                   | Power Query (M)                                                                                                                                                           |
 | **Язык управления (DSL)**             | `HorizonBI` (на базе JSON-конфигураторов)                                                                                                           |
@@ -41,7 +41,7 @@ flowchart TD
         TabConfig["Таблица TabConfigJSON<br/>(Колонки: IDconfig, CONFIG_JSON)"]:::storage
     end
 
-    subgraph ProcessorCore ["Ядро ETL: ProcessingTable (rev.05 v02)"]
+    subgraph ProcessorCore ["Ядро ETL: ProcessingTable (rev.05 v03)"]
         ArgResolver["1. Парсер аргументов и резолвер путей"]:::engine
         ConfigValidator["2. Ранняя валидация структуры JSON"]:::engine
         TableLoader["3. Экстрактор таблиц 1..4 (Current vs External)"]:::engine
@@ -513,7 +513,7 @@ flowchart TD
     {
       "НАИМЕНОВАНИЕ": {
         "fvCheckNonEmpty": [],
-        "fvCheckTextLength_scalar": [3, 200]
+        "fvCheckTextLength": [3, 200]
       }
     }
   ]
@@ -536,17 +536,22 @@ flowchart TD
     "ValidationData": [
       { "StrictBlock": true },
       { "NUM PROJECT": { "fvCheckNonEmpty": [] } },
-      { "isSHIPPED": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [4, 5] } },
-      { "QUANTITY TOTAL": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 50] } }
+      { "isSHIPPED": { "fvCheckNonEmpty": [], "fvCheckTextLength": [4, 5] } },
+      { "QUANTITY TOTAL": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [1, 50] } }
     ]
   }
   ```
 - **Текст критической ошибки при срабатывании:**
+  ```text
+  ValidationData (StrictBlock): Обнаружены критические ошибки валидации в N строк(е/ах) исходного датасета. Генерация производной спецификации остановлена.
+
+  ДЕТАЛИЗАЦИЯ НАРУШЕНИЙ (столбец / правила / кол-во строк / примеры строк):
+    • столбец 'SUPPLIER' (fvCheckNonEmpty, fvCheckTextLength): 9 строк(и); примеры строк: 1, 2, 3, 4, 5 ...
+    • столбец 'ARTICLE SUPPLIER' (fvCheckNonEmpty, fvCheckTextLength): 9 строк(и); примеры строк: 1, 2, 3, 4, 5 ...
+
+  Проверьте перечисленные поля в спецификации 'work spec' и повторите валидацию.
   ```
-  ValidationData (StrictBlock): Обнаружены критические ошибки валидации в N строк(е/ах) исходного
-  датасета. Генерация производной спецификации остановлена. Проверьте обязательные поля и
-  корректность значений в спецификации 'work spec' и повторите валидацию.
-  ```
+  *(Начиная с `rev.05 v03`, ошибка содержит структурированную сводку по всем проблемным столбцам, назначенным на них правилам, количеству нарушений и номерам первых строк-примеров).*
 
 #### Специальный валидатор `fvCheckSpecUniqueVer` (уникальность версии в группе позиции) — *добавлен в rev.05 v01*
 
@@ -556,7 +561,7 @@ flowchart TD
 - **Рекомендуемое применение:** обязательно указывать совместно с базовыми проверками столбца `VER COLLECTION` в блоке пред-валидации (`StrictBlock: true`), чтобы гарантировать корректную работу `FilterSpecMaxVer`/`FilterSpecMinVer`.
 - **JSON-сигнатура (правило привязывается к столбцу `VER COLLECTION`):**
   ```json
-  { "VER COLLECTION": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 50], "fvCheckSpecUniqueVer": [] } }
+  { "VER COLLECTION": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [1, 50], "fvCheckSpecUniqueVer": [] } }
   ```
 
 ---
