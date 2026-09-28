@@ -7,7 +7,7 @@
         { "IDnum": { "fvCheckID": [] } },
         { "NUM PROJECT": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [13, 25] } },
         { "NUM ORDER": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 100] } },
-        { "VER COLLECTION": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 50] } },
+        { "VER COLLECTION": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 50], "fvCheckSpecUniqueVer": [] } },
         { "DESCRIPTION SET": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [5, 300] } },
         { "IDset": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [1, 50] } },
         { "NUM SEQUENCE SET": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [1, 50] } },
@@ -15,7 +15,7 @@
         { "isSHIPPED": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [4, 5] } },
         { "HASH COLLECTION": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [6, 10] } },
         { "NAME PRODUCT": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [3, 300] } },
-        { "DESCRIPTION PRODUCT": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [10, 1000] } },
+        { "DESCRIPTION PRODUCT": { "fvCheckNonEmpty":  [], "fvCheckTextLength_scalar": [10, 1000] } },
         { "BRAND": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [3, 50] } },
         { "SUPPLIER": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [3, 50] } },
         { "ARTICLE SUPPLIER": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [3, 50] } },
@@ -29,7 +29,7 @@
         { "VAT ADD PRICE $PURCHASE": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [0, 2000000] } },
         { "COST PRICE $PURCHASE": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 10000000] } },
         { "COST PRICE VAT $PURCHASE": { "fvCheckNonEmpty": [], "fvCheckFloatRange_scalar": [1, 10000000] } },
-        { "TCP SOURCE": { "fvCheckNonEmpty": [], "fvCheckIntegerRange_scalar": [7, 1000] } },
+        { "TCP SOURCE": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [7, 1000] } },
         { "COMMENT WORK": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [7, 3000] } },
         { "URL PRODUCT": { "fvCheckNonEmpty": [], "fvCheckTextLength_scalar": [7, 1000] } },
 
@@ -64,13 +64,7 @@
       ]
     },
     "3": {
-      "SortData": [
-        { "NUM FULL SET": "Ascending" },
-        { "VER COLLECTION": "Descending" }
-      ],
-      "ColumnFilterUniqueData": [
-        "NUM FULL SET"
-      ]
+      "FilterSpecMaxVer": []
     },
     "4": {
       "RemoveXorColumn": [

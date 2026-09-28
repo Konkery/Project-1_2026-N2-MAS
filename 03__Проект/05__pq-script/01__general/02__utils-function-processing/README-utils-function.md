@@ -16,11 +16,11 @@
 | Параметр                          | `UtilsFunctionScalar`                      | `UtilsFunctionVector`                          |
 | :-------------------------------- | :----------------------------------------- | :--------------------------------------------- |
 | **Имя запроса в Power Query**     | `UtilsFunctionScalar`                      | `UtilsFunctionVector`                          |
-| **Текущая версия**                | `rev.08 v03`                               | `rev.08 v03`                                   |
+| **Текущая версия**                | `rev.08 v04`                               | `rev.08 v07`                                   |
 | **Область применения**            | Построчная валидация в `ProcessingTable`   | Пакетные трансформации и векторный `fvCheckID` |
 | **Тип возвращаемого значения**    | `logical` (`true` / `false`)               | `table` или `list`                             |
 | **Формат поставки в Power Query** | Агрегатная запись `FunctionRecord = [...]` | Агрегатная запись `FunctionRecord = [...]`     |
-| **Состав библиотеки**             | **18 скалярных функций**                   | **9 трансформаций + 1 проверка `fvCheckID`**   |
+| **Состав библиотеки**             | **18 скалярных функций**                   | **12 трансформаций + 3 проверки (`fvCheckID`, `fvCheckID_2`, `fvCheckSpecUniqueVer`)** |
 
 ### 1.3. Архитектурная схема взаимодействия
 
@@ -40,13 +40,13 @@ flowchart TD
         ETL_Engine["Движок ProcessingTable<br/>(Блок ValidationData)"]:::proc
     end
 
-    subgraph LibScalar ["Библиотека UtilsFunctionScalar (rev.08 v03)"]
+    subgraph LibScalar ["Библиотека UtilsFunctionScalar (rev.08 v04)"]
         ScalarFuncs["18 скалярных проверок<br/>(value, optional _verificationMode)<br/>Возврат: true / false"]:::scalar
     end
 
-    subgraph LibVector ["Библиотека UtilsFunctionVector (rev.08 v03)"]
-        VectorTransforms["9 функций трансформации ft...<br/>(Векторная обработка столбцов таблицы)"]:::vector
-        VectorID["fvCheckID<br/>(Векторная проверка ID: Table + Column)"]:::vector
+    subgraph LibVector ["Библиотека UtilsFunctionVector (rev.08 v07)"]
+        VectorTransforms["12 функций трансформации ft...<br/>(Векторная обработка столбцов таблицы)"]:::vector
+        VectorID["fvCheckID / fvCheckSpecUniqueVer<br/>(Векторные проверки: Table + логика)"]:::vector
     end
 
     UI_User -->|Вызов через интерфейс Excel| StandaloneWrapper
@@ -329,6 +329,28 @@ _Исключение:_ Функция `fvCheckNonEmpty_scalar` не имеет 
   7. `TargetPriceVat` — целевой столбец: Цена с НДС
   8. `TargetCostVat` — целевой столбец: Стоимость с НДС
 
+#### 9. `ftGetMaxList` / `ftGetMinList`
+
+- **Назначение:** Универсальные BI-функции группового экстремума. Группируют таблицу по столбцу-группе, внутри каждой группы находят строку с максимальным (`ftGetMaxList`) или минимальным (`ftGetMinList`) значением столбца-критерия и возвращают список значений столбца-результата. Используются ETL-процессором как низкоуровневый движок спец-команд `FilterSpecMaxVer` / `FilterSpecMinVer` (реализация паттерна «Latest Version» — отбор старших/младших версий позиций спецификации).
+- **Сигнатура:**
+  ```m
+  (_sourceTable as table, _groupColumn as text, _indexSearchColumn as text, _returnColumn as text) as list
+  ```
+- **Аргументы:**
+  1. `_sourceTable` — исходная таблица (объект Power Query)
+  2. `_groupColumn` — столбец группировки (например, `NUM FULL SET`)
+  3. `_indexSearchColumn` — столбец-критерий поиска экстремума (например, `VER COLLECTION`)
+  4. `_returnColumn` — столбец, значения которого возвращаются (например, `HASH COLLECTION`)
+- **Возврат:** список значений `_returnColumn` для строк-победителей каждой группы.
+
+#### 10. `ftGetMaxValue` / `ftGetMinValue`
+
+- **Назначение:** Универсальные BI-функции поиска максимального/минимального числового значения в столбце. При передаче необязательного столбца группировки работают как агрегатная функция `MAX(...)/MIN(...) GROUP BY ...` (возвращают таблицу с колонкой `MAX_VALUE`/`MIN_VALUE`); без группировки — возвращают одно число по всей таблице.
+- **Сигнатура:**
+  ```m
+  (_sourceTable as table, _columnName as text, optional _groupColumn as text) as any
+  ```
+
 ---
 
 ### 3.2. Специальная векторная валидация `fvCheckID`
@@ -363,6 +385,22 @@ flowchart TD
     CheckSeq -- ДА --> SetValidN["Код ошибки = 0<br/>lastValidValue = currentNumber"]:::valid
     CheckSeq -- НЕТ --> SetFirstError
 ```
+
+---
+
+### 3.3. Специальная векторная валидация `fvCheckSpecUniqueVer`
+
+- **Назначение:** Проверка уникальности версии позиции спецификации (`VER COLLECTION`) **в пределах группы** одной позиции (`NUM FULL SET`). Защищает от дубля версий у одной позиции, при котором детерминированный отбор старшей версии (`FilterSpecMaxVer`) стал бы неоднозначным.
+- **Контракт:**
+  ```m
+  (_sourceTable as table) as list
+  ```
+- **Регламентные поля (зашиты, аргументы не требуются):** группа — `NUM FULL SET`, проверяемая версия — `VER COLLECTION`.
+- **Механика:**
+  1. Группировка по `NUM FULL SET` (каждая группа — все версии одной позиции).
+  2. В каждой группе сравнивается число строк с числом уникальных значений `VER COLLECTION`. Несовпадение → дубль версии → вся группа помечается невалидной.
+  3. Результат проецируется обратно в плоский список кодов ошибок (0 — валидно, N — номер строки), длиной = число строк исходной таблицы (совместимо с движком `RunValidationEngine`).
+- **Применение:** указывается в блоке `ValidationData` как дополнительное правило столбца `VER COLLECTION`, обычно совместно со `StrictBlock: true`.
 
 ---
 
