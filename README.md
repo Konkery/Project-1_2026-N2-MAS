@@ -215,7 +215,7 @@ ProcessingTable(
 
 **Состав и количество BI-команд являются развиваемыми и не фиксируются в обзоре.** Актуальный перечень команд, их JSON-сигнатуры и категории — в справочнике:
 
-**→ Полное руководство по эксплуатации:** [README-etl-processor.md](./03__Проект/05__pq-script/01__general/03__ETL-processing/README-etl-processor.md)
+**→ Полное руководство по эксплуатации:** [README-etl-processor.md](./03__Проект/05__pq-script/01__general/03__etl-processing/README-etl-processor.md)
 
 ---
 
@@ -229,7 +229,7 @@ flowchart LR
 
     D1["01__general-function-processing<br/>README-general-function.md"]:::doc
     D2["02__utils-function-processing<br/>README-utils-function.md"]:::doc
-    D3["03__ETL-processing<br/>README-etl-processor.md"]:::doc
+    D3["03__etl-processing<br/>README-etl-processor.md"]:::doc
     D4["04__handbook-function-processing<br/>README-handbook-function.md"]:::doc
 ```
 
@@ -257,7 +257,7 @@ flowchart LR
 
 ### Руководства по ETL-инструментарию (M-код)
 
-- 📘 **[Руководство по эксплуатации ETL-процессора ProcessingTable](./03__Проект/05__pq-script/01__general/03__ETL-processing/README-etl-processor.md)**
+- 📘 **[Руководство по эксплуатации ETL-процессора ProcessingTable](./03__Проект/05__pq-script/01__general/03__etl-processing/README-etl-processor.md)**
 - 📗 **[Справочник функций валидации и трансформации UtilsFunction](./03__Проект/05__pq-script/01__general/02__utils-function-processing/README-utils-function.md)**
 - 📙 **[Справочник системных сервисных функций GeneralFunction](./03__Проект/05__pq-script/01__general/01__general-function-processing/README-general-function.md)**
 - 📕 **[Справочник функций нормативно-справочной информации HandbookFunction](./03__Проект/05__pq-script/01__general/04__handbook-function-processing/README-handbook-function.md)**

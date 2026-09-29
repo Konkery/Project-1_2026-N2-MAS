@@ -226,7 +226,7 @@ _(Колонки A–E листа содержат формулы `=ВЫБОРС
 | 10  | `VAT ADD PRICE UNIT $TOTAL`  | float | [0, 2000000]  |  ✅  |       ❌        | Исходящий НДС на ед. продукции (`Col_9 * Col_8`)                    |
 | 11  | `PRICE VAT UNIT $TOTAL`      | float | [1, 5000000]  |  ✅  |       ❌        | **Итоговая цена за ед. С НДС** (для договоров ОСНО)                 |
 | 12  | `COST $TOTAL`                | float | [1, 25000000] |  ✅  |       ❌        | **Итоговая стоимость БЕЗ НДС** (`QUANTITY TOTAL * Col_9`)           |
-| 13  | `COST ADD VAT $TOTAL`        | float | [1, 5000000]  |  ✅  |       ❌        | Исходящий НДС на стоимость партии (`Col_12 * Col_8`)                |
+| 13  | `COST ADD VAT $TOTAL`        | float | [0, 5000000]  |  ✅  |       ❌        | Исходящий НДС на стоимость партии (`Col_12 * Col_8`); `0` для УСН-позиций |
 | 14  | `COST VAT $TOTAL`            | float | [1, 25000000] |  ✅  |       ❌        | **Итоговая стоимость партии С НДС** (`Col_12 + Col_13`)             |
 | 15  | `DURATION SALE $TOTAL`       | int   | [1, 240]      |  ❌  |       ❌        | Срок поставки клиенту в рабочих днях                                |
 | 16  | `isSUPPLIED`                 | text  | [4, 5]        |  ❌  |       ❌        | Признак наличия складского остатка (`true`/`false`)                 |
@@ -429,7 +429,7 @@ _Подробное описание 19 фондов КБД 1-го типа и �
 ## 11. КАТАЛОГ СВЯЗЕЙ И ПЕРЕКРЁСТНЫЕ ССЫЛКИ
 
 - [Головной навигатор проекта (README.md)](../../../README.md)
-- [Руководство по эксплуатации ETL-процессора ProcessingTable](../../05__pq-script/01__general/03__ETL-processing/README-etl-processor.md)
+- [Руководство по эксплуатации ETL-процессора ProcessingTable](../../05__pq-script/01__general/03__etl-processing/README-etl-processor.md)
 - [Справочник функций НСИ (README-handbook-function.md)](../../05__pq-script/01__general/04__handbook-function-processing/README-handbook-function.md)
 - [Библиотеки валидации и трансформаций (README-utils-function.md)](../../05__pq-script/01__general/02__utils-function-processing/README-utils-function.md)
 - [Системные функции M (README-general-function.md)](../../05__pq-script/01__general/01__general-function-processing/README-general-function.md)

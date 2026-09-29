@@ -1,0 +1,94 @@
+{
+  "TabSpecificationWork": {
+    "1": {
+      "ValidationData": [
+        { "StrictBlock": true },
+
+        { "IDnum": { "fvCheckID": [] } },
+        { "NUM PROJECT": { "fvCheckNonEmpty": [], "fvCheckTextLength": [13, 25] } },
+        { "NUM ORDER": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [1, 100] } },
+        { "VER COLLECTION": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [1, 50], "fvCheckSpecUniqueVer": [] } },
+        { "DESCRIPTION SET": { "fvCheckNonEmpty": [], "fvCheckTextLength": [5, 300] } },
+        { "IDset": { "fvCheckNonEmpty": [], "fvCheckTextLength": [1, 50] } },
+        { "NUM SEQUENCE SET": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [1, 50] } },
+        { "NUM FULL SET": { "fvCheckNonEmpty": [], "fvCheckTextLength": [3, 5] } },
+        { "isSHIPPED": { "fvCheckNonEmpty": [], "fvCheckTextLength": [4, 5] } },
+        { "HASH COLLECTION": { "fvCheckNonEmpty": [], "fvCheckTextLength": [32, 55] } },
+        { "NAME PRODUCT": { "fvCheckNonEmpty": [], "fvCheckTextLength": [3, 300] } },
+        { "DESCRIPTION PRODUCT": { "fvCheckNonEmpty":  [], "fvCheckTextLength": [10, 1000] } },
+        { "BRAND": { "fvCheckNonEmpty": [], "fvCheckTextLength": [3, 50] } },
+        { "SUPPLIER": { "fvCheckNonEmpty": [], "fvCheckTextLength": [3, 50] } },
+        { "ARTICLE SUPPLIER": { "fvCheckNonEmpty": [], "fvCheckTextLength": [3, 50] } },
+        { "ARTICLE INTERNAL": { "fvCheckNonEmpty": [], "fvCheckTextLength": [20, 20] } },
+        { "UNITS": { "fvCheckNonEmpty": [], "fvCheckTextLength": [0, 2] } },
+        { "QUANTITY SET": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [1, 50] } },
+        { "QUANTITY SHIPPED SET": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [1, 50] } },
+        { "QUANTITY TOTAL": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [1, 50] } },
+        { "QUANTITY SUPPLIER": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [0, 999] } },
+        { "PRICE UNIT $PURCHASE": { "fvCheckNonEmpty": [], "fvCheckFloatRange": [1, 5000000] } },
+        { "COST PRICE $PURCHASE": { "fvCheckNonEmpty": [], "fvCheckFloatRange": [1, 10000000] } },
+        { "COMMENT WORK": { "fvCheckNonEmpty": [], "fvCheckTextLength": [7, 3000] } },
+        { "COEFFICIENT MARKUP": { "fvCheckNonEmpty": [], "fvCheckFloatRange": [1, 10] } },
+        { "PRICE UNIT $SALE": { "fvCheckNonEmpty": [], "fvCheckFloatRange": [1, 5000000] } },
+        { "COST DEAL $SALE": { "fvCheckNonEmpty": [], "fvCheckFloatRange": [1, 25000000] } },
+        { "DISCOUNT PERCENT": { "fvCheckNonEmpty": [], "fvCheckFloatRange": [0, 70] } },
+        { "DISCOUNT MONEY": { "fvCheckNonEmpty": [], "fvCheckFloatRange": [0, 500000] } },
+        { "PRICE UNIT $TOTAL": { "fvCheckNonEmpty": [], "fvCheckFloatRange": [1, 5000000] } },
+        { "COST $TOTAL": { "fvCheckNonEmpty": [], "fvCheckFloatRange": [1, 25000000] } },
+        { "DURATION SALE $TOTAL": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [1, 240] } },
+        { "isSUPPLIED": { "fvCheckNonEmpty": [], "fvCheckTextLength": [4, 5] } },
+        { "isPROCESSING": { "fvCheckNonEmpty": [], "fvCheckTextLength": [4, 5] } }
+      ]
+    },
+    "2": {
+      "ColumnFilterFreeData": [
+        { "NUM PROJECT": "27/2025-N1-МАС" }
+      ],
+      "RemoveRowAll": [
+        {
+          "row_1": {
+            "IndexSearchColumn": "isSHIPPED",
+            "IndexSearchRow": "false"
+          }
+        }
+      ]
+    },
+    "3": {
+      "FilterSpecMaxVer": []
+    },
+    "4": {
+      "ModifyData": []
+    },
+    "5": {
+      "RemoveXorColumn": [
+        "NUM FULL SET",
+        "NAME PRODUCT",
+        "UNITS",
+        "QUANTITY TOTAL",
+        "PRICE UNIT $TOTAL",
+        "COST $TOTAL",
+        "DURATION SALE $TOTAL"
+      ],
+      "RenameColumn": [
+        { "NUM FULL SET": "№" },
+        { "NAME PRODUCT": "НАИМЕНОВАНИЕ" },
+        { "UNITS": "ЕД ИЗМ." },
+        { "QUANTITY TOTAL": "КОЛ-ВО" },
+        { "PRICE UNIT $TOTAL": "ЦЕНА, руб" },
+        { "COST $TOTAL": "СТОИМОСТЬ, руб" },
+        { "DURATION SALE $TOTAL": "ДЛИТЕЛЬНОСТЬ ПОСТАВКИ, КАЛ. ДНЕЙ" }
+      ]
+    },
+    "6": {
+      "ColumnSetType": [
+        { "№": "text" },
+        { "НАИМЕНОВАНИЕ": "text" },
+        { "ЕД ИЗМ.": "text" },
+        { "КОЛ-ВО": "int" },
+        { "ЦЕНА, руб": "float" },
+        { "СТОИМОСТЬ, руб": "float" },
+        { "ДЛИТЕЛЬНОСТЬ ПОСТАВКИ, КАЛ. ДНЕЙ": "int" }
+      ]
+    }
+  }
+}

@@ -333,7 +333,7 @@ in
 ## 7. КАТАЛОГ СВЯЗЕЙ И ПЕРЕКРЁСТНЫЕ ССЫЛКИ
 
 - [Головное руководство проекта (README.md)](../../../../../README.md)
-- [Руководство по эксплуатации ETL-процессора ProcessingTable](../03__ETL-processing/README-etl-processor.md)
+- [Руководство по эксплуатации ETL-процессора ProcessingTable](../03__etl-processing/README-etl-processor.md)
 - [Руководство по библиотекам функций валидации и трансформации (UtilsFunction)](../02__utils-function-processing/README-utils-function.md)
 - [Руководство по системным сервисным функциям (GeneralFunction)](../01__general-function-processing/README-general-function.md)
 - [Спецификация Master Data шаблона (README-work_spec)](../../../07__template-excel/20__work_spec/README-work_spec.md)

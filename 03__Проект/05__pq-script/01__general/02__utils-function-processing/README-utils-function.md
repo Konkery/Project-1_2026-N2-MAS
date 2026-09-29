@@ -469,7 +469,7 @@ isValid = Function.Invoke(Record.Field(UtilsFunctionScalar, scalarFunctionName),
 ## 6. КАТАЛОГ СВЯЗЕЙ И ПЕРЕКРЁСТНЫЕ ССЫЛКИ
 
 - [Головное руководство проекта (README.md)](../../../../../README.md)
-- [Руководство по эксплуатации ETL-процессора ProcessingTable](../03__ETL-processing/README-etl-processor.md)
+- [Руководство по эксплуатации ETL-процессора ProcessingTable](../03__etl-processing/README-etl-processor.md)
 - [Руководство по системным сервисным функциям (GeneralFunction)](../01__general-function-processing/README-general-function.md)
 - [Руководство по функциям нормализации справочников (HandbookFunction)](../04__handbook-function-processing/README-handbook-function.md)
 - [Спецификация Master Data шаблона (README-work_spec)](../../../07__template-excel/20__work_spec/README-work_spec.md)
