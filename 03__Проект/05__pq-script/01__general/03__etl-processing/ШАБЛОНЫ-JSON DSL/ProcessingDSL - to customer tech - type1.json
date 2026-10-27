@@ -11,7 +11,7 @@
         { "DESCRIPTION SET": { "fvCheckNonEmpty": [], "fvCheckTextLength": [5, 300] } },
         { "IDset": { "fvCheckNonEmpty": [], "fvCheckTextLength": [1, 50] } },
         { "NUM SEQUENCE SET": { "fvCheckNonEmpty": [], "fvCheckIntegerRange": [1, 50] } },
-        { "NUM FULL SET": { "fvCheckNonEmpty": [], "fvCheckTextLength": [3, 5] } },
+        { "NUM FULL SET": { "fvCheckNonEmpty": [], "fvCheckTextLength": [3, 7] } },
         { "isSHIPPED": { "fvCheckNonEmpty": [], "fvCheckTextLength": [4, 5] } },
         { "HASH COLLECTION": { "fvCheckNonEmpty": [], "fvCheckTextLength": [32, 55] } },
         { "NAME PRODUCT": { "fvCheckNonEmpty": [], "fvCheckTextLength": [3, 300] } },
@@ -49,7 +49,7 @@
     },
     "2": {
       "ColumnFilterFreeData": [
-        { "NUM PROJECT": "27/2025-N1-МАС" }
+        { "NUM PROJECT": "8/2026-N1-ГОРИЗОНТ" }
       ],
       "RemoveRowAll": [
         {
